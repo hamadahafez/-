@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#143026">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>عداد الصلاة على النبي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#2b5c45;--bg2:#143026;--bg3:#0d2018;--gold:#e8d9ae;--gold-dim:#bfae80;--ink:#f3ecd6}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{display:flex;flex-direction:column;align-items:center;min-height:100%;padding:env(safe-area-inset-top) 20px env(safe-area-inset-bottom);background:radial-gradient(ellipse at 50% 35%,var(--bg1),var(--bg2) 62%,var(--bg3));color:var(--ink);font-family:'Amiri','Amiri Quran',serif;text-align:center;user-select:none;-webkit-user-select:none;overflow:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23e8d9ae' stroke-opacity='.08'%3E%3Crect x='16' y='16' width='48' height='48'/%3E%3Crect x='16' y='16' width='48' height='48' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E")}
+main{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:460px}
+.quran{font-family:'Amiri Quran','Amiri',serif;color:var(--gold-dim);font-size:1.08rem;line-height:2}
+.quran.top{font-size:1.15rem}
+hr{width:70%;height:1px;margin:14px 0 22px;border:0;background:linear-gradient(90deg,transparent,rgba(232,217,174,.45),transparent)}
+.salat{font-weight:700;font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.6;color:var(--ink)}
+.sub{font-size:1.15rem;color:var(--gold-dim);margin-bottom:30px}
+.wrap{position:relative;width:min(46vw,170px);aspect-ratio:1}
+#tap{width:100%;height:100%;border-radius:50%;border:3px solid var(--gold);background:rgba(13,32,24,.55);color:var(--ink);font:700 3.2rem 'Amiri',serif;cursor:pointer;box-shadow:0 0 0 10px rgba(232,217,174,.06),0 0 44px rgba(232,217,174,.2);touch-action:manipulation;transition:transform .08s}
+#tap:active{transform:scale(.95)}
+#reset{position:absolute;right:-8px;bottom:4px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(60,84,70,.9);display:grid;place-items:center;cursor:pointer;touch-action:manipulation}
+#reset svg{width:20px;height:20px;stroke:var(--ink)}
+footer{position:relative;padding:18px 0 22px;font-size:1.05rem;color:var(--gold-dim)}
+#fb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:40px;height:40px;border-radius:50%;background:rgba(120,120,90,.65);display:grid;place-items:center}
+#fb svg{width:22px;height:22px;fill:var(--ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <p class="quran top">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+  <p class="quran">إِنَّ ٱللَّهَ وَمَلَـٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّ ۚ<br>يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ صَلُّوا۟ عَلَيْهِ وَسَلِّمُوا۟ تَسْلِيمًا</p>
+  <hr>
+  <p class="salat">اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ</p>
+  <p class="sub">عَلَيْهِ ٱلصَّلَاةُ وَٱلسَّلَامُ</p>
+  <div class="wrap">
+    <button id="tap" aria-label="عداد، اضغط للزيادة"><span id="n">0</span></button>
+    <button id="reset" aria-label="تصفير العداد">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/></svg>
+    </button>
+  </div>
+</main>
+<footer>ٱلرَّجَاءُ ٱلدُّعَاءُ لِوَالِدَيَّ مِنْ صَالِحِ دُعَائِكُمْ</footer>
+
+<a id="fb" href="https://www.facebook.com/share/19kXGnER6W/" target="_blank" rel="noopener" aria-label="فيسبوك"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a>
+
+<script>
+const KEY='salat-count',out=document.getElementById('n');
+let n=0;
+try{n=parseInt(localStorage.getItem(KEY),10)||0}catch(e){}
+const render=()=>{out.textContent=n;try{localStorage.setItem(KEY,n)}catch(e){}};
+render();
+document.getElementById('tap').addEventListener('click',()=>{n++;render()});
+document.getElementById('reset').addEventListener('click',()=>{n=0;render()});
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
